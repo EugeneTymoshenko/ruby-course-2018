@@ -10,9 +10,9 @@ x-default: &default
 services:
   grape_workshop_api:
     <<: *default
-    build: .
+    build: ""
     container_name: "grape_workshop_api"
-    # command: bash -c "rm -f tmp/pids/server.pid && rails db:create && rails db:migrate && rails s -b 0.0.0.0"
+#    command: bash -c "rm -f tmp/pids/server.pid && rails db:create && rails db:migrate && rails s -b 0.0.0.0"
     command: bash -c "rm -f tmp/pids/server.pid && rails db:migrate && rails s -b 0.0.0.0"
     depends_on:
       - grape_workshop_db

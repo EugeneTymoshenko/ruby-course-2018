@@ -5,7 +5,11 @@ module WorkshopApi
       prefix 'api'
       version 'v1', using: :accept_version_header
 
-      mount WorkshopApi::V1::FakeEndpoints
+      helpers WorkshopApi::Helpers::MainHelper
+
+      mount FakeEndpoints
+      mount Users
+
       add_swagger_documentation api_version: 'v1', hide_documentation_path: true
     end
   end
